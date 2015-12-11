@@ -1,0 +1,46 @@
+﻿<div>
+    <h2>Employee List</h2>
+    <a href="#NewEmployee">Add New Employee</a>
+    <br />
+    <div>
+     Sort By :    <select ng-model="sortBy">
+            <option value="+EmployeeName">Employee Name</option>
+            <option value="+Designation">Designation</option>
+        </select>
+    </div>
+    <br />
+    
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr class="info">
+                <th>EmployeeID</th>
+                <th>Employee Name</th>
+                <th>Designation</th>
+                <th>ContactNo</th>
+                <th>EMailID</th>
+                <th>SkillSets</th>
+                <th>Operation</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="employee in employeeList | orderBy:sortBy" class="success">
+                <td>{{employee.EmployeeID}}</td>
+                <td>{{employee.EmployeeName}}</td>
+                <td>{{employee.Designation}}</td>
+
+                <td>{{employee.ContactNo}}</td>
+                <td>{{employee.EMailID}}</td>
+                <td>{{employee.SkillSets}}</td>
+               
+                 <td>
+                    <a href="#EditEmployee/{{employee.EmployeeID}}">Edit</a>
+                </td>
+
+                <td>
+                    <a href="#DeleteEmployee" ng-click="DeleteEmployee(employee)">Delete</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
