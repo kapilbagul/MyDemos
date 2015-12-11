@@ -32,5 +32,21 @@ var app = angular.module("app", ["ngRoute"])
                                     controller: "EmployeesListController"
                                 });
 
+                                $routeProvider.when("/Projects", {
+                                    templateUrl: "/Projects/ProjectDetails.html",
+                                    controller: "ProjectController"
+                                });
+
+                                $routeProvider.when("/UserStories", {
+                                    templateUrl: "/UserStory/UserStoryDetails.html",
+                                    controller:"UserStoryController"
+                                });
+
+                                $routeProvider.when("/NewUserStory", {
+                                    templateUrl: "/UserStory/UserStoryInsert.html",
+                                    controller: "UserStoryController"
+
+                                });
+
                                 $routeProvider.otherwise({redirectTo:"/home"})
                             });
